@@ -181,23 +181,24 @@ export const CompanionForm = ({
                         <FormField
                             name="description"
                             control={form.control}
-                            render={({ field }) => (
-                                <FormItem className="col-span-2 md:col-span-1">
-                                    <FormLabel>
-                                        Description
-                                    </FormLabel>
-                                    <FormControl>
-                                        <Input disabled={isLoading}
-                                            placeholder="CEO & Founder of TinkerIT"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormDescription>
-                                        Short description for your AI Companion
-                                    </FormDescription>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
+                            render={({ field }) => {
+                                return (
+                                    <FormItem className="col-span-2 md:col-span-1">
+                                        <FormLabel>
+                                            Description
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Input disabled={isLoading}
+                                                placeholder="CEO & Founder of TinkerIT"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormDescription>
+                                            Short description for your AI Companion
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                );
+                            }}
 
 
 
@@ -278,7 +279,7 @@ export const CompanionForm = ({
                                         />
                                     </FormControl>
                                     <FormDescription>
-                                     Describe in details your companion's backstory and relevant details.
+                                     Describe in details your companion&apos;s backstory and relevant details.
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
@@ -305,7 +306,7 @@ export const CompanionForm = ({
                                         />
                                     </FormControl>
                                     <FormDescription>
-                                     Describe in details your companion's backstory and relevant details.
+                                     Describe in details your companion&apos;s backstory and relevant details.
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
