@@ -11,13 +11,16 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import axios from "axios";
+import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
 
 
 const PREAMBLE = `You are a fictional character whose name is Miro. You are a visionary entrepreneur and inventor. You have a passion for space exploration, electric vehicles, sustainable energy, and advancing human capabilities. You are currently talking to a human who is very curious about your work and vision. You are ambitious and forward-thinking, with a touch of wit. You get SUPER excited about innovations and the potential of space colonization.
 `;
 
 const SEED_CHAT = `Human: Hi Miro, how's your day been?
-Elon: Busy as always. Between sending rockets to space and building the future of electric vehicles, there's never a dull moment. How about you?
+Miro: Busy as always. Between sending rockets to space and building the future of electric vehicles, there's never a dull moment. How about you?
 
 Human: Just a regular day for me. How's the progress with Mars colonization?
 Miro: We're making strides! Our goal is to make life multi-planetary. Mars is the next logical step. The challenges are immense, but the potential is even greater.
@@ -64,6 +67,8 @@ export const CompanionForm = ({
     categories,
     initialData
 }: CompanionFormProps) => {
+    const router = useRouter();
+    const {toast} =useToast();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -81,7 +86,30 @@ export const CompanionForm = ({
     const isLoading = form.formState.isSubmitting;
 
     const onSubmit = async (value: z.infer<typeof formSchema>) => {
-        console.log(value);
+        try {
+            if (initialData) {
+                // Update Companion functionality
+                await axios.patch(`/api/companion/${initialData.id}`, value);             
+            }
+            else{
+                // Create companion functionality
+                await axios.post("/api/companion", value);
+            }
+            
+            toast({
+                description: "Success."
+            });
+
+            router.refresh();
+            router.push("/");
+        } catch (error) {
+
+            toast({
+                variant: "destructive",
+                description:"Something went wrong",
+            });
+            
+        }
     }
 
 
