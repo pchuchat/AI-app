@@ -137,7 +137,7 @@ const formSchema = z.object({
                   <FormItem className="col-span-2 md:col-span-1">
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input disabled={isLoading} placeholder="Elon Musk" {...field} />
+                      <Input disabled={isLoading} placeholder="Miro Tammi" {...field} />
                     </FormControl>
                     <FormDescription>
                       This is how your AI Companion will be named.
@@ -153,7 +153,7 @@ const formSchema = z.object({
                   <FormItem>
                     <FormLabel>Description</FormLabel>
                     <FormControl>
-                      <Input disabled={isLoading} placeholder="CEO & Founder of Tesla, SpaceX" {...field} />
+                      <Input disabled={isLoading} placeholder="CEO & Founder of TinkerIT" {...field} />
                     </FormControl>
                     <FormDescription>
                       Short description for your AI Companion
