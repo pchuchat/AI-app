@@ -9,31 +9,29 @@ datasource db {
   relationMode = "prisma"
 }
 
-
 model Category {
-  id  String @id @default(uuid())
-  name String
-  companion Companion[]
+  id            String @id @default(uuid())
+  name          String
+  companions    Companion[]
 }
 
-model Companion{
-  id  String @id @default(uuid())
-  userId String
-  userName String
-  src String
-  name String @db.Text
-  description String
-  instructions String @db.Text
-  seed String @db.Text
+model Companion {
+  id            String @id @default(uuid())
+  userId        String
+  userName      String
+  src           String
+  name          String @db.Text
+  description   String
+  instructions  String @db.Text
+  seed          String @db.Text
 
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
-  createAt DateTime @default(now())
-  updatedAT DateTime @updatedAt
+  category      Category @relation(fields: [categoryId], references: [id])
+  categoryId    String
 
-  category Category @relation(fields: [categoryId], references: [id])
-  categoryId String
-
-  messages Message[]
+  messages      Message[]
 
   @@index([categoryId])
   @@fulltext([name])
@@ -45,17 +43,25 @@ enum Role {
 }
 
 model Message {
-  id String @id @default(uuid())
-  role Role
-  content String @db.Text
-  createdAT DateTime @default(now())
-  updateAt DateTime @updatedAt
+  id          String   @id @default(uuid())
+  role        Role   
+  content     String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   companionId String
-  userId String
+  userId      String
 
-
-  companion Companion @relation(fields: [companionId], references: [id] , onDelete:Cascade )
-
+  companion   Companion @relation(fields: [companionId], references: [id], onDelete: Cascade)
+  
   @@index([companionId])
+}
+
+model UserSubscription {
+  id                        String    @id @default(cuid())
+  userId                    String    @unique
+  stripeCustomerId          String?   @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId      String?   @unique @map(name: "stripe_subscription_id")
+  stripePriceId             String?   @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd    DateTime? @map(name: "stripe_current_period_end")
 }

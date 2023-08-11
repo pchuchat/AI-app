@@ -4,9 +4,19 @@ import { FaHome, FaPlus, FaCog } from 'react-icons/fa';
 import {usePathname,useRouter} from 'next/navigation';
 
 import { cn } from '@/lib/utils';
-export const Sidebar = () => {
+import { useProModal } from '@/hooks/use-pro-modal';
+
+interface SidebarPro {
+    isPro: boolean;
+}
+
+
+export const Sidebar = ({
+    isPro
+}: SidebarPro) => {
     const pathName = usePathname();
     const router = useRouter();
+    const proModal= useProModal();
 
     const routes = [
         {
@@ -23,7 +33,7 @@ export const Sidebar = () => {
         },
         {
           icon: FaCog,
-          href: "/setting",
+          href: "/settings",
           label: "Settings",
           pro: false,
         },
@@ -33,6 +43,12 @@ export const Sidebar = () => {
 
 
     const onNavigate = (url:string,pro:boolean) => {
+
+        if(pro && !isPro ){
+            return proModal.onOpen();
+        }
+
+
         return router.push(url);
 
     }

@@ -23,7 +23,7 @@ const RootPage = async ({
             }
         },
         orderBy: {
-            createAt: "desc",  
+            createdAt: "desc",  
         },
         include: {
             _count:{
