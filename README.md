@@ -22,4 +22,15 @@ This project is a complete guide to building an AI companion SaaS application us
 - **Layout Reuse**: How to reuse layouts across your Next.js application.
 - **Folder Structure in Next 13**: Organizing your code for scalability and maintainability.
 - **App Router**: Navigation and routing capabilities.
-- **Prerequisites**: Node version 18.x.x.
+
+## Prerequisites
+-**Node version 18.x.x.
+
+## Getting Started
+
+### Install Packages
+
+First, make sure to install the required packages by running:
+
+```bash
+npm i
