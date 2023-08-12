@@ -49,6 +49,7 @@ export const Companions = ({
                             src={item.src}
                             fill
                             className=" rounded-xl object-cover"
+                            sizes="(min-width: 640px) 640px, 100vw"
                             alt="Companion"
                             
                             />

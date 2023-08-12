@@ -77,7 +77,7 @@ export const ChatHeader = ({
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="secondary" size="icon">
-                            <MdMoreVert size="medium"/>
+                            <MdMoreVert size={24}/>
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
