@@ -10,8 +10,6 @@ This project is a complete guide to building an AI companion SaaS application us
 - **Clerk Authentication**: Support for Email, Google, and 9+ Social Logins.
 - **Client Form Validation**: Utilizes react-hook-form for client-side form validation and handling.
 - **Server Error Handling**: Uses react-toast for displaying server errors.
-- **Image Generation Tool**: Integration with Open AI for image generation.
-- **Video Generation Tool**: Works with Replicate AI for video generation.
 - **Conversation Generation Tool**: Utilizes Open AI for conversation generation.
 - **Page Loading State**: Enhances UX with loading indicators.
 - **Stripe Monthly Subscription**: Manages subscriptions with Stripe integration.
@@ -34,3 +32,6 @@ First, make sure to install the required packages by running:
 
 ```bash
 npm i
+
+### Setup .env File
+Create a .env file in your project root and add the following keys:
