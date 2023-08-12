@@ -22,19 +22,19 @@ This project is a complete guide to building an AI companion SaaS application us
 - **App Router**: Navigation and routing capabilities.
 
 ## Prerequisites
-Node version 18.x.x.
+- **Node version 18.x.x.**
 
 ## Getting Started
 
 ### Install Packages
 
-First, make sure to install the required packages by running:
+**First, make sure to install the required packages by running:**
 
 ```bash
 npm i
 ```
 ### Setup .env File
-Create a .env file in your project root and add the following keys:
+**Create a .env file in your project root and add the following keys:**
 ```bash
 
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
@@ -66,7 +66,7 @@ NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ```
 
 ### Setup Prisma
-Add your MySQL Database (I used PlanetScale), and then run:
+**Add your MySQL Database (I used PlanetScale), and then run:**
 ```bash
 npx prisma db push
 ```
