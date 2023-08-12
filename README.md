@@ -5,8 +5,8 @@ Build a SaaS AI Companion with Next.js 13, React, Tailwind, Prisma, Stripe
 
 Features:
 
-Tailwind design
-Tailwind animations and effects
+Tailwind design \n
+Tailwind animations and effects \n
 Full responsiveness
 Clerk Authentication (Email, Google, 9+ Social Logins)
 Client form validation and handling using react-hook-form
