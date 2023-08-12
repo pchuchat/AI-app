@@ -22,7 +22,7 @@ This project is a complete guide to building an AI companion SaaS application us
 - **App Router**: Navigation and routing capabilities.
 
 ## Prerequisites
--**Node version 18.x.x.
+Node version 18.x.x.
 
 ## Getting Started
 
