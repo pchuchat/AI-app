@@ -1,5 +1,7 @@
 # Build a SaaS AI Companion with Next.js 13, React, Tailwind, Prisma, Stripe
 
+![Ai](https://github.com/pchuchat/AI-app/assets/84800814/f221487e-c50c-48a1-b63a-b641e77e05c2)
+
 This project is a complete guide to building an AI companion SaaS application using some of the most powerful and popular technologies in the modern web ecosystem.
 
 ## Features
